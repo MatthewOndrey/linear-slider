@@ -1,0 +1,78 @@
+:root {
+    --speedo-font: "arial";
+    --speedo-font-size: 56px;
+    --pixel-width: 2px;
+    --speedo-margin-top: -40px;
+}
+
+@keyframes glow-anim {
+    from {
+        text-shadow: -3px -0px 1px #000000, 0 0 20px #000, 0 0 30px #ff0000, 0 0 10px #ff0000, 0 0 20px #000000, 0 0 10px #000000;
+    }
+
+    to {
+        text-shadow: -3px -0px 1px #000000, 0 0 20px #00f, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 10px #ff0000, 0 0 40px #ff0000;
+    }
+}
+
+.glow {
+    -webkit-animation: glow-anim 1s ease-in-out infinite alternate;
+    animation: glow-anim 1s ease-in-out infinite alternate;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    font-family: var(--speedo-font);
+}
+
+.speedText {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    height: 90px;
+}
+
+.slider-width500 {
+    width: 500px;
+}
+
+.speedbox {
+    float: left;
+    font-size: smaller;
+    padding-top: 9px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 2px;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(0deg, #000 0%, #ff0000 94%, #000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.currentspeedbox {
+    float: left;
+    word-spacing: -40px;
+    position: absolute;
+    height: 100%;
+    color: white;
+    background: rgba(255, 255, 255, 0);
+}
+
+.speedometer {
+    padding: 20px 0 0 0;
+    height: 100%;
+    left: 0;
+    mix-blend-mode: screen;
+    margin-top: var(--speedo-margin-top);
+    font-size: var(--speedo-font-size);
+    font-family: var(--speedo-font);
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+}
